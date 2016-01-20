@@ -51,8 +51,8 @@ public class Electricity_Cost_Applet extends JApplet {
 	JLabel battery_costcalculations = new JLabel ("");
 	JLabel total_costcalculations = new JLabel ("");
 	
-	
-	
+	// In the original program, we had created a frame in this space. Since this is an applet, we do not need a frame, we can just add the panel directly to the applet.
+	// We deleted all the code with frames.
 	
 	JPanel p = new JPanel(new GridLayout(0,2)); //We must make a panel. The Gridlayout allows us to organize the features in two columns.
 	p.add(computercost_q); // On the panel, we add the different features (JLabel, JComboBox, JButton, etc.)
@@ -83,7 +83,7 @@ public class Electricity_Cost_Applet extends JApplet {
 	p.add(total_costcalculations);
 
 
-	add(p);
+	add(p); // We add the panel to the applet.
 	
 	calculate.addActionListener(new ActionListener () { //When the button is clicked...
 		public void actionPerformed (ActionEvent e) {
