@@ -45,27 +45,27 @@
 		}
 	 	
 	 	if (browserName=="Firefox") {
-	 		if (majorVersion < 21) {
-	 			alert("YOUR FIREFOX BROWSER IS NOT UP TO DATE! PLEASE UPDATE THE BROWSER OR THE APPLET WILL NOT RUN.");
-	 			window.location.replace("https://support.mozilla.org/en-US/kb/update-firefox-latest-version");
+	 		if (majorVersion < 43) {
+	 			alert("YOUR FIREFOX BROWSER IS NOT UP TO DATE. Please update the browser or the applet will not run.");
+	 			window.location.replace("https://www.mozilla.org/en-US/firefox/new/?scene=2#download-fx");
 	 		}
 	 	}
 	 	
 	 	if (browserName=="Opera") {
 	 		if (majorVersion < 34) {
-	 			alert("YOUR OPERA BROWSER IS NOT UP TO DATE! PLEASE UPDATE THE BROWSER OR THE APPLET WILL NOT RUN.");
-	 			window.location.replace("http://help.opera.com/Mac/10.50/en/autoupdate.html");
+	 			alert("YOUR OPERA BROWSER IS NOT UP TO DATE. Please update the browser or the applet will not run.");
+	 			window.location.replace("http://www.opera.com");
 	 		}
 	 	}
 	 	
 	 	java_plugin_version = deployJava.getJREs();
 		if (java_plugin_version != "1.8.0_71") {
-				alert("YOUR JAVA PLUGIN IS NOT UP TO DATE! PLEASE UPDATE THE PLUGIN OR THE APPLET WILL NOT RUN.");
+				alert("YOUR JAVA PLUGIN IS NOT UP TO DATE. Please update the plugin or the applet will not run.");
 	 		  	window.location.replace("https://www.java.com/en/download/");
 		}
 		
 		if (navigator.javaEnabled()===false) {
-			alert("YOU NEED TO ENABLE THE JAVA PLUGIN FOR YOUR BROWSER. THE APPLET WILL NOT RUN IF THE PLUGIN IS NOT ENABLED.");
+			alert("YOU NEED TO ENABLE THE JAVA PLUGIN FOR YOUR BROWSER. The applet will not run if the plugin is not enabled.");
 		}
 	}
 
