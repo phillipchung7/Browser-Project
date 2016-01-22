@@ -54,17 +54,7 @@ if (isNaN(majorVersion)) {
 }
 if (browserName.equals("Firefox") && majorVersion == 43 || browserName.equals("Opera") && majorVersion == 25) {
 	//This is the code down there that executes The computer cost calculator. It can't be in an if statement, so how else would it work to run the applet
-	<body>
-	<center>
-	<h2>Computer Cost Calculator</h2>
-	<applet
-		code="Electricity_Cost_Applet.class"
-		width=700
-		height=500
-	>
-	</applet>
-	</center>
-</body>
+	document.getElementById('Electricity_Cost_Applet').innerHTML = 'applet';
 }
 	}
 
