@@ -2,75 +2,10 @@
 <head>
 <title>Computer Cost Calculator</Title>
 
-<script src="deployJava.js"></script>
-<script>
-	browser=navigator.userAgent;
-	if (browser.indexOf("Firefox")==-1 && browser.indexOf("OPR")==-1 && browser.indexOf("Opera")==-1) {
-    		window.location.replace("Get Java-Enabled Browser.html");
-		}
-	else {
-	 	var nVer = navigator.appVersion;
-		var nAgt = navigator.userAgent;
-		var browserName  = navigator.appName;
-		var fullVersion  = ''+parseFloat(navigator.appVersion); 
-		var majorVersion = parseInt(navigator.appVersion,10);
-		var nameOffset,verOffset,ix;
-	 	// In Opera 15+, the true version is after "OPR/" 
-		if ((verOffset=nAgt.indexOf("OPR/"))!=-1) {
- 			browserName = "Opera";
- 			fullVersion = nAgt.substring(verOffset+4);
-		}
-		// In older Opera, the true version is after "Opera" or after "Version"
-		else if ((verOffset=nAgt.indexOf("Opera"))!=-1) {
- 			browserName = "Opera";
- 			fullVersion = nAgt.substring(verOffset+6);
- 				if ((verOffset=nAgt.indexOf("Version"))!=-1) 
-   					fullVersion = nAgt.substring(verOffset+8);
-		}
-		// In Firefox, the true version is after "Firefox" 
-		else if ((verOffset=nAgt.indexOf("Firefox"))!=-1) {
- 			browserName = "Firefox";
-			fullVersion = nAgt.substring(verOffset+8);
-		}
-		// trim the fullVersion string at semicolon/space if present
-		if ((ix=fullVersion.indexOf(";"))!=-1)
-   			fullVersion=fullVersion.substring(0,ix);
-		if ((ix=fullVersion.indexOf(" "))!=-1)
-   			fullVersion=fullVersion.substring(0,ix);
-   			
-		majorVersion = parseInt(''+fullVersion,10);
-		if (isNaN(majorVersion)) {
- 			fullVersion  = ''+parseFloat(navigator.appVersion); 
-			majorVersion = parseInt(navigator.appVersion,10);
-		}
-	 	
-	 	if (browserName=="Firefox") {
-	 		if (majorVersion < 43) {
-	 			alert("YOUR FIREFOX BROWSER IS NOT UP TO DATE. Please update the browser or the applet will not run.");
-	 			window.location.replace("https://www.mozilla.org/en-US/firefox/new/");
-	 		}
-	 	}
-	 	
-	 	if (browserName=="Opera") {
-	 		if (majorVersion < 34) {
-	 			alert("YOUR OPERA BROWSER IS NOT UP TO DATE. Please update the browser or the applet will not run.");
-	 			window.location.replace("http://www.opera.com");
-	 		}
-	 	}
-	 	
-	 	java_plugin_version = deployJava.getJREs();
-		if (java_plugin_version != "1.8.0_71") {
-				alert("YOUR JAVA PLUGIN IS NOT UP TO DATE. Please update the plugin or the applet will not run.");
-	 		  	window.location.replace("https://www.java.com/en/download/");
-		}
-		
-		if (navigator.javaEnabled()===false) {
-			alert("YOU NEED TO ENABLE THE JAVA PLUGIN FOR YOUR BROWSER. The applet will not run if the plugin is not enabled.");
-			document.write("<center><h1><font color=red face=calibri>Enable the Java plugin.</font></h1></center>");
-		}
-	}
+<script src="deployJava.js"></script> <!-- This calls the Javascript file that detects the Java plugin version -->
+<script src="Browser and Plugin Checker.js"></script> <!-- This calls the Javascript file that detects the browser and browser version -->
 
-</script>
+<!-- If all the criteria are met, run the applet -->
 
 </head>
 
